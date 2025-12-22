@@ -128,7 +128,11 @@ class DB:
             """
         ]
 
-        for query in queries:
+        for i, query in enumerate(queries):
+            if not query or not query.strip():
+                print(f"Пропускаю пустой запрос #{i}")
+                continue
+            print(f"Выполняю запрос #{i}: {query[:50]}...")
             self.execute_query(query)
 
         self.create_default_admin()

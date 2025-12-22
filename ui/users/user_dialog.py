@@ -12,14 +12,16 @@ class UserDialog(QDialog):
         self.setGeometry(200, 200, 300, 250)
         self.center()
 
-        self.form_layout = QFormLayout()
+        main_layout = QVBoxLayout()
 
-        self.id_input = QLineEdit("")
-        self.id_input.setReadOnly(True)
-        self.id_input.setStyleSheet("background-color: #f0f0f0;")  
         if user:
-            self.id_input.setText(str(user['id']))
-            self.form_layout.addRow("№:", self.id_input)
+            id_layout = QHBoxLayout()
+            id_layout.addWidget(QLabel("№:"))
+            self.id_input = QLineEdit(str(user['id']))
+            self.id_input.setReadOnly(True)
+            self.id_input.setStyleSheet("background-color: #f0f0f0;")
+            id_layout.addWidget(self.id_input)
+            main_layout.addLayout(id_layout)
 
         self.username_input = QLineEdit(user['username'] if user else "")
         username_validator = QRegularExpressionValidator(QRegularExpression(r"^[a-zA-Z]+$"), self.username_input)
@@ -52,7 +54,7 @@ class UserDialog(QDialog):
         grid_layout.addWidget(self.password_input, 3, 0)
         grid_layout.addWidget(self.confirm_password_input, 3, 1)
 
-        self.form_layout.addRow(grid_layout)
+        main_layout.addLayout(grid_layout)
 
         buttons_layout = QVBoxLayout() 
         buttons_layout.addStretch(1)
@@ -73,8 +75,6 @@ class UserDialog(QDialog):
         buttons_layout.addWidget(self.cancel_button, alignment=Qt.AlignmentFlag.AlignCenter)
         buttons_layout.addStretch(1)
 
-        main_layout = QVBoxLayout()
-        main_layout.addLayout(self.form_layout)
         main_layout.addLayout(buttons_layout)
         self.setLayout(main_layout)
 
