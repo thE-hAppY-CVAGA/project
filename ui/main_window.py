@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
 
         from datetime import date
         info_label = QLabel(f"Профиль: <b>{self.username}</b>  Роль: <b>{self.role}</b>  Дата: <b>{date.today().strftime('%d.%m.%Y')}</b>")
-        info_label.setAlignment(Qt.AlignCenter)
+        info_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         info_label.setStyleSheet("font-size: 36px; font-weight: bold;")
 
         top_panel_layout.addStretch(1)
@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
         layout.addLayout(main_content_layout)
 
         self.nav_menu_layout = QVBoxLayout()
-        self.nav_menu_layout.setAlignment(Qt.AlignCenter)  
+        self.nav_menu_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)  
         main_content_layout.addLayout(self.nav_menu_layout, 1)
 
         self.main_content_container = QWidget()

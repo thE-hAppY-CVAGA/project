@@ -11,14 +11,14 @@ class CustomersPage(BasePage):
         page_layout.setContentsMargins(10, 10, 30, 10)
         self.layout.addLayout(page_layout)
 
-        page_layout.addWidget(QLabel("<h1>Страница клиентов</h1>"), alignment=Qt.AlignCenter)
+        page_layout.addWidget(QLabel("<h1>Страница клиентов</h1>"), alignment=Qt.AlignmentFlag.AlignCenter)
 
         self.table = QTableWidget()
         self.table.setColumnCount(6)
         self.table.setHorizontalHeaderLabels(["№", "ИНН", "Название", "Телефон", "Кол-во покупок", "Адрес"])
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)
-        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.verticalHeader().setVisible(False)
         self.table.setColumnWidth(0, 120)
         self.table.setColumnWidth(1, 180)

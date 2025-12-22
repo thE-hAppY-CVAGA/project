@@ -11,14 +11,14 @@ class SalesPage(BasePage):
         page_layout.setContentsMargins(10, 10, 30, 10)
         self.layout.addLayout(page_layout)
 
-        page_layout.addWidget(QLabel("<h1>Страница продаж</h1>"), alignment=Qt.AlignCenter)
+        page_layout.addWidget(QLabel("<h1>Страница продаж</h1>"), alignment=Qt.AlignmentFlag.AlignCenter)
 
         self.table = QTableWidget()
         self.table.setColumnCount(5)
         self.table.setHorizontalHeaderLabels(["№", "Покупатели", "Продажа", "Сумма", "Дата"])
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)
-        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.verticalHeader().setVisible(False)
         self.table.setColumnWidth(0, 150)
         self.table.setColumnWidth(1, 250)
@@ -113,3 +113,7 @@ class SalesPage(BasePage):
             self.db.execute_query("DELETE FROM sale_items WHERE sale_id = %s", (sale_id,))
             self.db.execute_query("DELETE FROM sales WHERE id = %s", (sale_id,))
             self.load_sales()
+
+    def refresh_data(self):
+        """Обновляет данные в таблице"""
+        self.load_sales()

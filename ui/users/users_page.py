@@ -11,14 +11,14 @@ class UsersPage(BasePage):
         page_layout = QVBoxLayout()
         self.layout.addLayout(page_layout)
 
-        page_layout.addWidget(QLabel("<h1>Страница пользователей</h1>"), alignment=Qt.AlignCenter)
+        page_layout.addWidget(QLabel("<h1>Страница пользователей</h1>"), alignment=Qt.AlignmentFlag.AlignCenter)
 
         self.table = QTableWidget()
         self.table.setColumnCount(4)
         self.table.setHorizontalHeaderLabels(["№", "Профиль", "Статус", "Последний вход"])
         self.table.setSelectionBehavior(QTableWidget.SelectionBehavior.SelectRows)
         self.table.setSelectionMode(QTableWidget.SelectionMode.SingleSelection)
-        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.verticalHeader().setVisible(False)
         
         self.table.setColumnWidth(0, 150)
