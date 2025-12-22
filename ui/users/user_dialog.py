@@ -44,13 +44,13 @@ class UserDialog(QDialog):
         self.confirm_password_input.setValidator(confirm_validator)
 
         grid_layout = QGridLayout()
-        grid_layout.addWidget(QLabel("Профиль:"), 0, 0, alignment=Qt.AlignmentFlag.AlignHCenter)
-        grid_layout.addWidget(QLabel("Статус:"), 0, 1, alignment=Qt.AlignmentFlag.AlignHCenter)
+        grid_layout.addWidget(QLabel("Профиль:"), 0, 0, alignment=Qt.AlignHCenter)
+        grid_layout.addWidget(QLabel("Статус:"), 0, 1, alignment=Qt.AlignHCenter)
         grid_layout.addWidget(self.username_input, 1, 0)
         grid_layout.addWidget(self.role_combo, 1, 1)
 
-        grid_layout.addWidget(QLabel("Пароль:"), 2, 0, alignment=Qt.AlignmentFlag.AlignHCenter)
-        grid_layout.addWidget(QLabel("Повтор. пароля:"), 2, 1, alignment=Qt.AlignmentFlag.AlignHCenter)
+        grid_layout.addWidget(QLabel("Пароль:"), 2, 0, alignment=Qt.AlignHCenter)
+        grid_layout.addWidget(QLabel("Повтор. пароля:"), 2, 1, alignment=Qt.AlignHCenter)
         grid_layout.addWidget(self.password_input, 3, 0)
         grid_layout.addWidget(self.confirm_password_input, 3, 1)
 
@@ -71,8 +71,8 @@ class UserDialog(QDialog):
         self.cancel_button.setStyleSheet("font-size: 18px; font-weight: bold; padding: 10px;")
         self.cancel_button.clicked.connect(self.reject)
 
-        buttons_layout.addWidget(self.save_button, alignment=Qt.AlignmentFlag.AlignCenter)
-        buttons_layout.addWidget(self.cancel_button, alignment=Qt.AlignmentFlag.AlignCenter)
+        buttons_layout.addWidget(self.save_button, alignment=Qt.AlignCenter)
+        buttons_layout.addWidget(self.cancel_button, alignment=Qt.AlignCenter)
         buttons_layout.addStretch(1)
 
         main_layout.addLayout(buttons_layout)

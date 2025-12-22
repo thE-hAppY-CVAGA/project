@@ -10,13 +10,13 @@ class ReportsPage(BasePage):
         page_layout.setContentsMargins(10, 10, 30, 10)  
         self.layout.addLayout(page_layout)
 
-        page_layout.addWidget(QLabel("<h1>Страница отчетов</h1>"), alignment=Qt.AlignmentFlag.AlignCenter)
+        page_layout.addWidget(QLabel("<h1>Страница отчетов</h1>"), alignment=Qt.AlignCenter)
 
         date_selection_layout = QHBoxLayout()
         date_selection_layout.addStretch(1)  
 
         period_label = QLabel("Период")
-        period_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        period_label.setAlignment(Qt.AlignCenter)
         period_label.setStyleSheet("font-size: 24px; font-weight: bold;")
         date_selection_layout.addWidget(period_label)
 
@@ -53,7 +53,7 @@ class ReportsPage(BasePage):
         self.table = QTableWidget()
         self.table.setColumnCount(4)
         self.table.setHorizontalHeaderLabels(["Товар", "Продано", "Средняя цена", "Выручка"])
-        self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.table.verticalHeader().setVisible(False)
 
         self.table.setColumnWidth(0, 300)

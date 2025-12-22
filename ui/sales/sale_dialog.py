@@ -20,7 +20,7 @@ class SaleDialog(QDialog):
 
         left_layout = QVBoxLayout()
         left_layout.setSpacing(15)
-        left_layout.addWidget(QLabel("Покупатель"), alignment=Qt.AlignmentFlag.AlignCenter)
+        left_layout.addWidget(QLabel("Покупатель"), alignment=Qt.AlignCenter)
 
         self.customer_combo = QComboBox()
         self.customer_combo.setFixedWidth(200)
@@ -34,7 +34,7 @@ class SaleDialog(QDialog):
 
         right_layout = QVBoxLayout()
         right_layout.setSpacing(15)
-        right_layout.addWidget(QLabel("Сумма"), alignment=Qt.AlignmentFlag.AlignCenter)
+        right_layout.addWidget(QLabel("Сумма"), alignment=Qt.AlignCenter)
 
         self.total_amount_input = QLineEdit("0.00")
         self.total_amount_input.setFixedWidth(200)
@@ -48,7 +48,7 @@ class SaleDialog(QDialog):
         top_layout.addLayout(right_layout)
         self.main_layout.addLayout(top_layout)
 
-        self.main_layout.addWidget(QLabel("<h2>Продажа</h2>"), alignment=Qt.AlignmentFlag.AlignCenter)
+        self.main_layout.addWidget(QLabel("<h2>Продажа</h2>"), alignment=Qt.AlignCenter)
 
         self.main_grid = QGridLayout()
         self.main_grid.setSpacing(20) 
@@ -56,8 +56,8 @@ class SaleDialog(QDialog):
         self.product_rows = []
         self.current_row = 1 
 
-        self.main_grid.addWidget(QLabel("Товар"), 0, 1, alignment=Qt.AlignmentFlag.AlignLeft)
-        self.main_grid.addWidget(QLabel("Количество"), 0, 2, alignment=Qt.AlignmentFlag.AlignLeft)
+        self.main_grid.addWidget(QLabel("Товар"), 0, 1, alignment=Qt.AlignLeft)
+        self.main_grid.addWidget(QLabel("Количество"), 0, 2, alignment=Qt.AlignLeft)
 
         self.add_first_product_row()
 
@@ -127,7 +127,7 @@ class SaleDialog(QDialog):
         quantity_input = QLineEdit("")
         quantity_input.setFixedWidth(200)  
         quantity_input.setMinimumHeight(40)  
-        quantity_input.setAlignment(Qt.AlignmentFlag.AlignCenter)  
+        quantity_input.setAlignment(Qt.AlignCenter)  
         quantity_input.setValidator(QIntValidator(1, 9999, quantity_input))
         self.main_grid.addWidget(quantity_input, row_index, 2)
 
@@ -159,7 +159,7 @@ class SaleDialog(QDialog):
         quantity_input = QLineEdit("")
         quantity_input.setFixedWidth(200)  
         quantity_input.setMinimumHeight(40)  
-        quantity_input.setAlignment(Qt.AlignmentFlag.AlignCenter) 
+        quantity_input.setAlignment(Qt.AlignCenter) 
         quantity_input.setValidator(QIntValidator(1, 9999, quantity_input))
         self.main_grid.addWidget(quantity_input, row_index, 2)
 

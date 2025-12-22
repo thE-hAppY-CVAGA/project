@@ -37,17 +37,17 @@ class CustomerDialog(QDialog):
         self.address_input = QLineEdit(customer.get('address', '') if customer else "")
 
         grid_layout = QGridLayout()
-        grid_layout.addWidget(QLabel("ИНН:"), 0, 0, alignment=Qt.AlignmentFlag.AlignHCenter)
-        grid_layout.addWidget(QLabel("Название:"), 0, 1, alignment=Qt.AlignmentFlag.AlignHCenter)
+        grid_layout.addWidget(QLabel("ИНН:"), 0, 0, alignment=Qt.AlignHCenter)
+        grid_layout.addWidget(QLabel("Название:"), 0, 1, alignment=Qt.AlignHCenter)
         grid_layout.addWidget(self.inn_input, 1, 0)
         grid_layout.addWidget(self.name_input, 1, 1)
 
-        grid_layout.addWidget(QLabel("Телефон:"), 2, 0, alignment=Qt.AlignmentFlag.AlignHCenter)
-        grid_layout.addWidget(QLabel("Email:"), 2, 1, alignment=Qt.AlignmentFlag.AlignHCenter)
+        grid_layout.addWidget(QLabel("Телефон:"), 2, 0, alignment=Qt.AlignHCenter)
+        grid_layout.addWidget(QLabel("Email:"), 2, 1, alignment=Qt.AlignHCenter)
         grid_layout.addWidget(self.phone_input, 3, 0)
         grid_layout.addWidget(self.email_input, 3, 1)
 
-        grid_layout.addWidget(QLabel("Адрес:"), 4, 0, alignment=Qt.AlignmentFlag.AlignHCenter)
+        grid_layout.addWidget(QLabel("Адрес:"), 4, 0, alignment=Qt.AlignHCenter)
         grid_layout.addWidget(self.address_input, 5, 0, 1, 2)
         main_layout.addLayout(grid_layout)
 
@@ -66,8 +66,8 @@ class CustomerDialog(QDialog):
         self.cancel_button.setStyleSheet("font-size: 18px; font-weight: bold; padding: 10px;")
         self.cancel_button.clicked.connect(self.reject)
 
-        buttons_layout.addWidget(self.save_button, alignment=Qt.AlignmentFlag.AlignCenter)
-        buttons_layout.addWidget(self.cancel_button, alignment=Qt.AlignmentFlag.AlignCenter)
+        buttons_layout.addWidget(self.save_button, alignment=Qt.AlignCenter)
+        buttons_layout.addWidget(self.cancel_button, alignment=Qt.AlignCenter)
         buttons_layout.addStretch(1)
 
         main_layout.addLayout(buttons_layout)
